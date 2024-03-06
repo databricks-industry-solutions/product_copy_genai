@@ -71,33 +71,57 @@ job_json = {
             {
                 "job_cluster_key": "sample_solacc_cluster",
                 "notebook_task": {
-                    "notebook_path": f"00_[PLEASE READ] Contributing to Solution Accelerators"
+                    "notebook_path": f"00_Intro_and_Config"
                 },
-                "task_key": "sample_solacc_01"
+                "task_key": "00"
             },
-            # {
-            #     "job_cluster_key": "sample_solacc_cluster",
-            #     "notebook_task": {
-            #         "notebook_path": f"02_Analysis"
-            #     },
-            #     "task_key": "sample_solacc_02",
-            #     "depends_on": [
-            #         {
-            #             "task_key": "sample_solacc_01"
-            #         }
-            #     ]
-            # }
+            {
+                 "job_cluster_key": "sample_solacc_cluster",
+                 "notebook_task": {
+                     "notebook_path": f"01_Data_Prep"
+                 },
+                 "task_key": "01",
+                 "depends_on": [
+                     {
+                         "task_key": "00"
+                     }
+                 ]
+             },
+            {
+                 "job_cluster_key": "sample_solacc_cluster",
+                 "notebook_task": {
+                     "notebook_path": f"02_Extract_Image_Descriptions"
+                 },
+                 "task_key": "02",
+                 "depends_on": [
+                     {
+                         "task_key": "01"
+                     }
+                 ]
+             },
+            {
+                 "job_cluster_key": "sample_solacc_cluster",
+                 "notebook_task": {
+                     "notebook_path": f"03_Generate_Product_Descriptions"
+                 },
+                 "task_key": "03",
+                 "depends_on": [
+                     {
+                         "task_key": "02"
+                     }
+                 ]
+             }
         ],
         "job_clusters": [
             {
                 "job_cluster_key": "sample_solacc_cluster",
                 "new_cluster": {
-                    "spark_version": "11.3.x-cpu-ml-scala2.12",
+                    "spark_version": "14.3.x-gpu-ml-scala2.12",
                 "spark_conf": {
                     "spark.databricks.delta.formatCheck.enabled": "false"
                     },
                     "num_workers": 2,
-                    "node_type_id": {"AWS": "i3.xlarge", "MSA": "Standard_DS3_v2", "GCP": "n1-highmem-4"},
+                    "node_type_id": {"AWS": "g4dn.xlarge", "MSA": "Standard_NC48ads_A100_v4"},
                     "custom_tags": {
                         "usage": "solacc_testing"
                     },
