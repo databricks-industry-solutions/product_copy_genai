@@ -38,7 +38,10 @@ if 'config' not in locals().keys():
 # DBTITLE 1,Database
 # set catalog
 config['catalog'] = 'tristen'
-_ = spark.sql(f"CREATE CATALOG IF NOT EXISTS {config['catalog']}")
+try:
+  _ = spark.sql(f"CREATE CATALOG IF NOT EXISTS {config['catalog']}")
+except:
+  pass
 _ = spark.sql(f"USE CATALOG {config['catalog']}")
 
 # set schema
