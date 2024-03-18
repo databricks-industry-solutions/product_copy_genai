@@ -30,7 +30,7 @@ import pyspark.sql.functions as fn
 # COMMAND ----------
 
 # DBTITLE 1,Get Config Settings
-# MAGIC %run "./00_Intro_and_Config"
+# MAGIC %run "./01_Intro_and_Config"
 
 # COMMAND ----------
 

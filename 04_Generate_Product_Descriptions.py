@@ -23,7 +23,7 @@ from databricks_genai_inference import ChatCompletion
 # COMMAND ----------
 
 # DBTITLE 1,Get Configuration Settings
-# MAGIC %run "./00_Intro_and_Config"
+# MAGIC %run "./01_Intro_and_Config"
 
 # COMMAND ----------
 

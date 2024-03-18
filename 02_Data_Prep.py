@@ -22,7 +22,7 @@
 # COMMAND ----------
 
 # DBTITLE 1,Get Config
-# MAGIC %run "./00_Intro_and_Config"
+# MAGIC %run "./01_Intro_and_Config"
 
 # COMMAND ----------
 
