@@ -1,5 +1,4 @@
-
-%md ##Introduction
+## Introduction
 
 With this solution accelerator, we will show how generative AI can be used to help organizations efficiently generate product descriptions, *i.e.* product copy, for use on an ecommerce site.  The overarching workflow supported across these notebooks can be visualized as follows:
 </p>
